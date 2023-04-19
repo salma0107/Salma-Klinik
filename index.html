@@ -6,14 +6,11 @@
     <style>
         .box {
             border: 3px solid rgb(247, 238, 238);
-            /* Menentukan jenis, ukuran, dan warna garis bingkai */
             padding: 20px;
-            /* Menambahkan 10px ruang kosong di sekitar elemen HTML */
             margin: auto;
-            /* Memberikan 10px ruang kosong di antara elemen HTML dan elemen sekitarnya */
             width: 60%;
             justify-content: center;
-            background-color:rgb(240, 240, 240);
+            background-color: rgb(240, 240, 240);
             border-radius: 10px;
         }
 
@@ -44,11 +41,14 @@
         }
 
         input[type="text"] {
-            width: 48%; /* Menentukan lebar kolom input 100% */
-            padding: 3px; /* Menentukan padding pada kolom input */
-            box-sizing: border-box; /* Menghitung padding dan border sebagai bagian dari lebar */
+            width: 48%;
+            /* Menentukan lebar kolom input 100% */
+            padding: 3px;
+            /* Menentukan padding pada kolom input */
+            box-sizing: border-box;
+            /* Menghitung padding dan border sebagai bagian dari lebar */
         }
-        
+
         .usia {
             padding: 3px 20px;
             width: 10%;
@@ -70,25 +70,25 @@
         }
 
         body {
-            background-image: url('hutan.jpg');
+            background-image: url('https://i.postimg.cc/B6j29WhP/hutan.jpg');
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
         }
-
-
     </style>
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    
+
     <div style="text-align: center; font-family: cursive;">
         <br>
         <h1>KLINIK AVICENNA</h1>
     </div>
     <div style="text-align: center;">
-        <p class="p1"><marquee width="60%">Jl. Ir. H. Juanda No.161 Argasari Kota Tasikmalaya, Jawa Barat 46151</marquee></p>
+        <p class="p1">
+            <marquee width="60%">Jl. Ir. H. Juanda No.161 Argasari Kota Tasikmalaya, Jawa Barat 46151</marquee>
+        </p>
     </div>
 
 
@@ -102,25 +102,25 @@
                 <label for="date" class="date"></label>
                 <input class="poli" type="date" id="date" name="date" required>
                 <input class="input-btn" type="text" id="name" name="name" required
-                    placeholder="Isi nama pasien disini..." >
+                    placeholder="Isi nama pasien disini...">
                 <label for="age"></label>
                 <input class="usia" type="number" id="age" name="age" required placeholder="Isi usia disini...">
                 <label for=" poli"></label>
                 <select class="poli" id="poli" name="poli" required>
-                    <option value="" >Pilih Poli Klinik</option>
+                    <option value="">Pilih Poli Klinik</option>
                 </select>
                 <button class="button1" id="button" type="submit" class="tambah-btn"><strong>Tambah</strong></button>
             </form>
         </div>
-        
+
         <br>
-    
+
         <table id="patient-table" border="1">
             <thead>
-                <tr style="color: rgba(0, 0, 0, 0.753);">
+                <tr style="color: rgba(0, 0, 0, 0.753);" >
                     <th>
                         <center>No</center>
-                    </th>
+                    </th> 
                     <th>
                         <center>Tanggal</center>
                     </th>
@@ -142,7 +142,7 @@
         </table>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script>
-            // Ambil data poli dari JSON Server
+
             axios.get('http://localhost:3000/polies')
                 .then(response => {
                     const poliSelect = document.getElementById('poli');
@@ -157,7 +157,7 @@
                     console.error(error);
                 });
 
-            // Ambil data pasien dari JSON Server
+
             axios.get('http://localhost:3000/patients')
                 .then(response => {
                     const patients = response.data;
@@ -180,7 +180,7 @@
                         no++;
                     });
 
-                    // Tambah event listener untuk button edit
+                   
                     const editBtns = document.querySelectorAll('.edit-btn');
                     editBtns.forEach(editBtn => {
                         editBtn.addEventListener('click', () => {
@@ -198,7 +198,7 @@
                         });
                     });
 
-                    // Tambah event listener untuk form tambah pasien
+                    
                     const form = document.getElementById('add-patient-form');
                     form.addEventListener('submit', event => {
                         event.preventDefault();
@@ -209,7 +209,7 @@
                         const patientId = form.getAttribute('data-id');
                         const data = { date, name, age, poli };
                         if (patientId) {
-                            // Edit data pasien
+                            // Button Edit 
                             axios.patch(`http://localhost:3000/patients/${patientId}`, data)
                                 .then(response => {
                                     alert('Data pasien berhasil diubah');
@@ -220,7 +220,7 @@
                                     alert('Terjadi kesalahan saat mengubah data pasien');
                                 });
                         } else {
-                            // Tambah data pasien
+                            // Add Data
                             axios.post('http://localhost:3000/patients', data)
                                 .then(response => {
                                     alert('Data pasien berhasil ditambahkan');
@@ -233,7 +233,7 @@
                         }
                     });
 
-                    // Tambah event listener untuk button hapus
+                    
                     const deleteBtns = document.querySelectorAll('.delete-btn');
                     deleteBtns.forEach(deleteBtn => {
                         deleteBtn.addEventListener('click', () => {
