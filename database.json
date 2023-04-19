@@ -1,0 +1,82 @@
+{
+  "patients": [
+    {
+      "date": "2023-04-02",
+      "name": "Wawan Januar",
+      "age": "47",
+      "poli": "Poli Lansia",
+      "id": 5
+    },
+    {
+      "date": "2023-03-10",
+      "name": "Caca Marica",
+      "age": "14",
+      "poli": "Poli Gigi",
+      "id": 6
+    },
+    {
+      "date": "2023-04-03",
+      "name": "Tatan Kalibra",
+      "age": "23",
+      "poli": "Poli Umum",
+      "id": 7
+    },
+    {
+      "date": "2023-04-05",
+      "name": "Hanifa",
+      "age": "33",
+      "poli": "Poli Umum",
+      "id": 8
+    },
+    {
+      "date": "2023-04-30",
+      "name": "Amira Kaila Janara ",
+      "age": "12",
+      "poli": "Poli Anak",
+      "id": 9
+    },
+    {
+      "date": "2023-04-05",
+      "name": "Salma Salsabila",
+      "age": "20",
+      "poli": "Poli Gizi",
+      "id": 10
+    },
+    {
+      "date": "2023-04-04",
+      "name": "Adi Supendri",
+      "age": "25",
+      "poli": "Poli Gigi",
+      "id": 11
+    },
+    {
+      "date": "2023-04-05",
+      "name": "Ujang Maman",
+      "age": "54",
+      "poli": "Poli Lansia",
+      "id": 12
+    }
+  ],
+  "polies": [
+    {
+      "id": 1,
+      "name": "Poli Umum"
+    },
+    {
+      "id": 2,
+      "name": "Poli Lansia"
+    },
+    {
+      "id": 3,
+      "name": "Poli Anak"
+    },
+    {
+      "id": 4,
+      "name": "Poli Gigi"
+    },
+    {
+      "id": 5,
+      "name": "Poli Gizi"
+    }
+  ]
+}
